@@ -302,15 +302,27 @@ h1 {
   background: #173f43;
 }
 
-.game-card {
+.game-card,
+.hub-card {
   grid-column: span 2;
 }
 
-.game-key-art {
+.game-key-art,
+.hub-key-art {
   display: block;
   width: 100%;
-  aspect-ratio: 1232 / 706;
   object-fit: cover;
+}
+
+.game-key-art {
+  aspect-ratio: 1232 / 706;
+}
+
+.hub-key-art {
+  aspect-ratio: 1571 / 766;
+  border-bottom: 1px solid var(--line);
+  height: auto;
+  object-position: top;
 }
 
 .gameplay-preview {
@@ -439,7 +451,8 @@ h1 {
   }
 
   .project-card-mobile,
-  .game-card {
+  .game-card,
+  .hub-card {
     grid-column: auto;
   }
 
