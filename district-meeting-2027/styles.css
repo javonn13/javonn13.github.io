@@ -134,6 +134,11 @@ h2 { max-width: 840px; font-size: clamp(2.35rem, 5vw, 4.4rem); }
 .download-grid h3 { margin: 7px 0 12px; font-size: 1.35rem; }
 .download-grid p { margin: 0; color: var(--muted); line-height: 1.7; }
 .status { display: inline-flex; margin-top: 22px; padding: 8px 11px; border-radius: 999px; background: var(--gold-soft); color: #79520d; font-size: 0.78rem; font-weight: 850; }
+.download-link { margin-top: 22px; white-space: normal; }
+.status.available { background: #e6f3e9; color: #235b31; }
+.beta-note { display: grid; grid-template-columns: 180px 1fr; gap: 24px; margin-top: 18px; padding: 24px 28px; border: 1px solid var(--line); border-radius: 18px; background: #faf7fb; }
+.beta-note strong { color: var(--purple-700); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.beta-note p { margin: 0; color: var(--muted); line-height: 1.7; }
 
 .policy-band { background: #f4eff5; border-block: 1px solid var(--line); }
 .effective { margin: 22px 0 36px; color: var(--muted); line-height: 1.7; }
@@ -210,6 +215,7 @@ footer a { text-decoration: underline; text-underline-offset: 3px; }
   .request-panel,
   .support-grid { align-items: start; }
   .primary-link { justify-self: start; white-space: normal; }
+  .beta-note { grid-template-columns: 1fr; gap: 10px; }
   footer { flex-direction: column; }
 }
 

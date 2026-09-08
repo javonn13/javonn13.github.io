@@ -11,7 +11,7 @@
     <meta property="og:description" content="Privacy, protected-voting practices, support, and beta status for the 2027 Phoenix meeting app.">
     <meta property="og:url" content="https://javonn13.github.io/district-meeting-2027/">
     <title>82nd 12th District Meeting App — Privacy, Support &amp; Beta Access</title>
-    <link rel="stylesheet" href="styles.css?v=20260908">
+    <link rel="stylesheet" href="styles.css?v=20260908b">
   </head>
   <body>
     <a class="skip-link" href="#privacy-policy">Skip to privacy policy</a>
@@ -48,29 +48,35 @@
 
     <main>
       <section class="section-shell beta" id="beta-access" aria-labelledby="beta-title" tabindex="-1">
-        <p class="section-label">Public beta</p>
+        <p class="section-label">Public test previews</p>
         <h2 id="beta-title">Test links and release status</h2>
         <p class="lede">
-          The installable beta will use the same verified registration and
-          administrator-approval boundary as production. Earlier demonstration
-          builds were canceled. TestFlight and Android links will appear here
-          after AWS account services are deployed, signed builds are processed,
-          and the required platform review is complete.
+          These public, time-limited packages let organizers review the app’s
+          artwork and features. They use non-counting demonstration data and do
+          not create real member accounts or submit official votes. The future
+          member beta will restore verified registration and administrator
+          approval after the AWS services are deployed.
         </p>
         <div class="download-grid">
           <article>
             <span class="platform">Apple</span>
-            <h3>TestFlight public beta</h3>
-            <p>For supported iPhone and iPad devices. Apple must approve the first external beta build before its public invitation link can open.</p>
-            <span class="status">Waiting for AWS setup and Apple signing</span>
+            <h3>Apple Simulator preview</h3>
+            <p>For a Mac with Apple’s iPhone Simulator. This is a simulator archive, not a TestFlight or physical-iPhone installation.</p>
+            <a class="primary-link download-link" href="https://expo.dev/artifacts/eas/QwBYKz9UsxLdcDrC9xQ6bOLC2bU3EaHEQN31wZSDNz0.tar.gz">Download Apple preview <span aria-hidden="true">↓</span></a>
+            <span class="status available">Verified · available through September 22, 2026</span>
           </article>
           <article>
             <span class="platform">Android</span>
             <h3>Android public test</h3>
-            <p>For supported Android devices. The public link will be added after the signed test build is processed by the selected distribution channel.</p>
-            <span class="status">Waiting for AWS setup and replacement build</span>
+            <p>Download the signed APK on a supported Android device. Android may ask you to approve installation from your browser or file manager.</p>
+            <a class="primary-link download-link" href="https://expo.dev/artifacts/eas/YgJHriixR_eyHiGXPcx0YL4e67EUNC_6BtPVC4h0-HM.apk">Download Android preview <span aria-hidden="true">↓</span></a>
+            <span class="status available">Verified · available through September 22, 2026</span>
           </article>
         </div>
+        <aside class="beta-note">
+          <strong>Physical iPhone testing</strong>
+          <p>A public TestFlight link still requires permanent Apple signing credentials and Apple Beta App Review. The production account-gated beta also requires the prepared AWS stack and Amazon SES to be deployed.</p>
+        </aside>
       </section>
 
       <section class="policy-band" id="privacy-policy" aria-labelledby="privacy-title" tabindex="-1">
@@ -195,6 +201,19 @@
                 The app is intended for adult meeting attendees, organizers, and
                 authorized testers. It is not directed to children and does not
                 knowingly collect personal information from children.
+              </p>
+            </article>
+
+            <article>
+              <p class="detail-label">Artwork and local assets</p>
+              <h3>Meeting artwork is bundled with the app</h3>
+              <p>
+                The district-meeting logo, fraternity shield, and temple
+                illustration supplied by the organizer are packaged inside the
+                app. Merely viewing these images does not contact an external
+                image server, create an advertising identifier, or disclose
+                personal information. The app does not use the images as
+                tracking pixels.
               </p>
             </article>
           </div>
