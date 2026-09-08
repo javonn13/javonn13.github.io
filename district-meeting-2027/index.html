@@ -34,9 +34,10 @@
         <p class="dates">May 26–30, 2027 · Arizona Grand Resort &amp; Spa</p>
         <p class="intro">
           Privacy, support, and beta information for the iPhone, iPad, and
-          Android meeting companion. General meeting pages are available without
-          an account. Protected voting is available only to eligible members
-          with organizer-issued credentials when the cloud service is enabled.
+          Android meeting companion. Every member must create a verified account
+          and receive super-administrator approval before entering the app.
+          Approved members receive internet-backed meeting updates; voting is
+          further limited to eligible accounts.
         </p>
         <div class="host-line">
           Phi Iota <span>•</span> Alpha Theta <span>•</span> Alpha Epsilon
@@ -50,23 +51,24 @@
         <p class="section-label">Public beta</p>
         <h2 id="beta-title">Test links and release status</h2>
         <p class="lede">
-          The public beta uses a clearly labeled, non-counting demonstration
-          ballot. It does not submit an official vote. TestFlight and Android
-          download links will appear here after their platform builds finish
-          processing and the required platform review is complete.
+          The installable beta will use the same verified registration and
+          administrator-approval boundary as production. Earlier demonstration
+          builds were canceled. TestFlight and Android links will appear here
+          after AWS account services are deployed, signed builds are processed,
+          and the required platform review is complete.
         </p>
         <div class="download-grid">
           <article>
             <span class="platform">Apple</span>
             <h3>TestFlight public beta</h3>
             <p>For supported iPhone and iPad devices. Apple must approve the first external beta build before its public invitation link can open.</p>
-            <span class="status">Build preparation in progress</span>
+            <span class="status">Waiting for AWS setup and Apple signing</span>
           </article>
           <article>
             <span class="platform">Android</span>
             <h3>Android public test</h3>
             <p>For supported Android devices. The public link will be added after the signed test build is processed by the selected distribution channel.</p>
-            <span class="status">Build preparation in progress</span>
+            <span class="status">Waiting for AWS setup and replacement build</span>
           </article>
         </div>
       </section>
@@ -80,8 +82,8 @@
           <div class="summary-grid">
             <article>
               <span>01</span>
-              <h3>Open meeting guide</h3>
-              <p>The cover, summary, agenda, speakers, venue diagram, and sponsor acknowledgements do not require an account.</p>
+              <h3>Approved member access</h3>
+              <p>Registration verifies the member’s email address. A super administrator must then approve the account before meeting information, live updates, or ballots can be opened.</p>
             </article>
             <article>
               <span>02</span>
@@ -100,8 +102,9 @@
               <p class="detail-label">Information collected</p>
               <h3>Only what is needed for access and voting</h3>
               <ul>
-                <li>Name, email address, organizer-issued username, and internal account identifier</li>
+                <li>Name, email address, account username, email-verification state, approval status, assigned roles, and internal account identifier</li>
                 <li>Authentication tokens stored in platform secure storage; the app does not retain the password after entry</li>
+                <li>Live meeting content published by authorized administrators, including the administrator username and update time in audit records</li>
                 <li>Ballot ID and account identifier in the eligibility/participation record, without the selected option</li>
                 <li>Ballot ID, random receipt, selected option, and submission time in a separate vote record, without the member identifier</li>
                 <li>Security and operations metadata that hosting providers may process, including IP address, request time, logs, traces, and error details</li>
@@ -112,8 +115,9 @@
               <p class="detail-label">How information is used</p>
               <h3>Meeting operations and election integrity</h3>
               <ul>
-                <li>Provide approved meeting information and venue logistics</li>
-                <li>Authenticate eligible voters and administer accounts</li>
+                <li>Authenticate members and restrict the meeting app to approved accounts</li>
+                <li>Review registrations, assign roles, and provide approved meeting information, live updates, and venue logistics</li>
+                <li>Authenticate eligible voters and administer ballots</li>
                 <li>Enforce one response per eligible account for each ballot</li>
                 <li>Count, review, audit, and certify authorized ballot results</li>
                 <li>Secure, troubleshoot, and operate the service</li>
@@ -121,23 +125,24 @@
             </article>
 
             <article>
-              <p class="detail-label">Demo beta behavior</p>
-              <h3>No official vote is transmitted</h3>
+              <p class="detail-label">Registration and approval</p>
+              <h3>Verification does not automatically grant access</h3>
               <p>
-                The public testing build uses a demonstration ballot unless the
-                organizers expressly enable the production cloud configuration.
-                Completing the demo displays a confirmation on the device and
-                does not record or transmit an official ballot response.
+                A person can request an account and verify the supplied email
+                address, but the app remains locked until a designated super
+                administrator approves the request. Rejected accounts cannot
+                enter the app. Super administrators can review account details,
+                approve or reject access, and publish live meeting updates.
               </p>
             </article>
 
             <article>
               <p class="detail-label">Service providers and external links</p>
-              <h3>AWS-hosted voting when enabled</h3>
+              <h3>AWS-hosted accounts, updates, and voting</h3>
               <p>
                 Amazon Web Services provides identity, API, database, logging,
-                tracing, email-delivery, and recovery services for protected
-                voting. Google Maps and the Arizona Grand Resort site open only
+                tracing, email-delivery, account-recovery, live-content, and
+                protected-voting services. Google Maps and the Arizona Grand Resort site open only
                 when you select their links and then operate under their own
                 privacy terms. GitHub Pages hosts this policy and support page.
               </p>
@@ -148,7 +153,8 @@
               <h3>No sale of personal information</h3>
               <p>
                 Information is not sold or shared for behavioral advertising.
-                It may be disclosed to authorized election administrators,
+                It may be disclosed to authorized super administrators, content
+                administrators, election administrators,
                 contracted service providers acting under instructions, or when
                 reasonably required for security, legal compliance, or the
                 protection of users and the service.
@@ -159,7 +165,7 @@
               <p class="detail-label">Retention</p>
               <h3>Limited by purpose</h3>
               <p>
-                Cloud test accounts and test ballot records are deleted or
+                Cloud test accounts, approval records, live-content audit data, and test ballot records are deleted or
                 de-identified no later than 90 days after testing ends. Service
                 logs are configured for 30 days. Official election records are
                 retained through certification and any approved recount or
@@ -175,7 +181,8 @@
               <h3>Layered safeguards</h3>
               <p>
                 Data is encrypted in transit, cloud tables use server-side
-                encryption and point-in-time recovery, access is role-gated, and
+                encryption and point-in-time recovery, access is gated by email
+                verification, administrator approval, and assigned roles, and
                 duplicate voting is enforced by a server transaction. No system
                 can guarantee absolute security or absolute anonymity.
               </p>
@@ -204,13 +211,14 @@
           <p class="section-label">Privacy requests</p>
           <h2 id="request-title">Access, correct, or delete your information</h2>
           <p>
-            Email the address used for your voting account with the subject
+            Email the address used for your meeting account with the subject
             “82nd District Meeting Privacy Request.” Include your username and
             the type of request, but never send your password, temporary
             password, access token, or verification code.
           </p>
           <p>
-            Identity may need to be verified before a request is completed.
+            You can begin an account-deletion request from the Account page in
+            the app or use the public email link below. Identity may need to be verified before a request is completed.
             Deleting an account does not silently delete a certified anonymous
             ballot, override an approved records requirement, or create a second
             chance to vote during an active ballot.
