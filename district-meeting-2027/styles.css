@@ -165,6 +165,7 @@ h2 { max-width: 840px; font-size: clamp(2.35rem, 5vw, 4.4rem); }
 .notice { display: grid; grid-template-columns: 160px 1fr; gap: 24px; margin-top: 18px; padding: 26px 30px; border-radius: 18px; background: var(--purple-900); color: white; }
 .notice strong { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
 .notice p { margin: 0; color: rgba(255, 255, 255, 0.76); line-height: 1.7; }
+.notice.future-feature { background: #4a285f; }
 
 .request-panel,
 .support-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 64px; align-items: end; }

@@ -8,10 +8,10 @@
     <link rel="canonical" href="https://javonn13.github.io/district-meeting-2027/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="82nd 12th District Meeting App — Privacy &amp; Support">
-    <meta property="og:description" content="Privacy, protected-voting practices, support, and beta status for the 2027 Phoenix meeting app.">
+    <meta property="og:description" content="Privacy, private member-community practices, support, and beta status for the 2027 Phoenix meeting app.">
     <meta property="og:url" content="https://javonn13.github.io/district-meeting-2027/">
     <title>82nd 12th District Meeting App — Privacy, Support &amp; Beta Access</title>
-    <link rel="stylesheet" href="styles.css?v=20260908b">
+    <link rel="stylesheet" href="styles.css?v=20260908c">
   </head>
   <body>
     <a class="skip-link" href="#privacy-policy">Skip to privacy policy</a>
@@ -36,8 +36,8 @@
           Privacy, support, and beta information for the iPhone, iPad, and
           Android meeting companion. Every member must create a verified account
           and receive super-administrator approval before entering the app.
-          Approved members receive internet-backed meeting updates; voting is
-          further limited to eligible accounts.
+          Approved members receive internet-backed meeting updates, announcements,
+          resources, a private social feed, photo sharing, and a suggestion box.
         </p>
         <div class="host-line">
           Phi Iota <span>•</span> Alpha Theta <span>•</span> Alpha Epsilon
@@ -52,8 +52,8 @@
         <h2 id="beta-title">Test links and release status</h2>
         <p class="lede">
           These public, time-limited packages let organizers review the app’s
-          artwork and features. They use non-counting demonstration data and do
-          not create real member accounts or submit official votes. The future
+          artwork and features. They use local demonstration data and do
+          not create real member accounts, upload photos, send suggestions, or register devices for production alerts. The future
           member beta will restore verified registration and administrator
           approval after the AWS services are deployed.
         </p>
@@ -89,7 +89,7 @@
             <article>
               <span>01</span>
               <h3>Approved member access</h3>
-              <p>Registration verifies the member’s email address. A super administrator must then approve the account before meeting information, live updates, or ballots can be opened.</p>
+              <p>Registration verifies the member’s email address. A super administrator must then approve the account before meeting information, updates, resources, or the private community can be opened.</p>
             </article>
             <article>
               <span>02</span>
@@ -98,34 +98,36 @@
             </article>
             <article>
               <span>03</span>
-              <h3>Separated voting records</h3>
-              <p>When protected voting is enabled, eligibility participation and ballot selections are stored separately to reduce identity-to-selection correlation.</p>
+              <h3>Private member community</h3>
+              <p>Posts and shared photos are visible only to approved members. Suggestions are private to authorized organizers, and notification permission is optional.</p>
             </article>
           </div>
 
           <div class="details-grid">
             <article>
               <p class="detail-label">Information collected</p>
-              <h3>Only what is needed for access and voting</h3>
+              <h3>Only what is needed for access and meeting participation</h3>
               <ul>
                 <li>Name, email address, account username, email-verification state, approval status, assigned roles, and internal account identifier</li>
                 <li>Authentication tokens stored in platform secure storage; the app does not retain the password after entry</li>
                 <li>Live meeting content published by authorized administrators, including the administrator username and update time in audit records</li>
-                <li>Ballot ID and account identifier in the eligibility/participation record, without the selected option</li>
-                <li>Ballot ID, random receipt, selected option, and submission time in a separate vote record, without the member identifier</li>
+                <li>Member posts, selected photos, photo descriptions, author display name, internal account identifier, post time, and moderation records</li>
+                <li>Private suggestions, selected topic, account name and email, review status, and submission time</li>
+                <li>Optional device notification token, device platform, and alert preference when a member turns on push notifications</li>
+                <li>Selected photos may contain visual details or image metadata supplied by the device; members should not share sensitive personal, financial, health, or membership information</li>
                 <li>Security and operations metadata that hosting providers may process, including IP address, request time, logs, traces, and error details</li>
               </ul>
             </article>
 
             <article>
               <p class="detail-label">How information is used</p>
-              <h3>Meeting operations and election integrity</h3>
+              <h3>Meeting operations and member communication</h3>
               <ul>
                 <li>Authenticate members and restrict the meeting app to approved accounts</li>
                 <li>Review registrations, assign roles, and provide approved meeting information, live updates, and venue logistics</li>
-                <li>Authenticate eligible voters and administer ballots</li>
-                <li>Enforce one response per eligible account for each ballot</li>
-                <li>Count, review, audit, and certify authorized ballot results</li>
+                <li>Deliver announcements and optional push alerts</li>
+                <li>Display approved-member posts and photos, support author or administrator removal, and moderate meeting-inappropriate content</li>
+                <li>Provide downloadable resources and route private suggestions to authorized organizers</li>
                 <li>Secure, troubleshoot, and operate the service</li>
               </ul>
             </article>
@@ -144,11 +146,11 @@
 
             <article>
               <p class="detail-label">Service providers and external links</p>
-              <h3>AWS-hosted accounts, updates, and voting</h3>
+              <h3>AWS-hosted accounts, updates, and private content</h3>
               <p>
-                Amazon Web Services provides identity, API, database, logging,
-                tracing, email-delivery, account-recovery, live-content, and
-                protected-voting services. Google Maps and the Arizona Grand Resort site open only
+                Amazon Web Services provides identity, API, logging,
+                tracing, email-delivery, account-recovery, live-content, database,
+                and private photo-storage services. Expo provides device notification-token registration and push delivery after a member opts in. Google Maps and the Arizona Grand Resort site open only
                 when you select their links and then operate under their own
                 privacy terms. GitHub Pages hosts this policy and support page.
               </p>
@@ -159,8 +161,7 @@
               <h3>No sale of personal information</h3>
               <p>
                 Information is not sold or shared for behavioral advertising.
-                It may be disclosed to authorized super administrators, content
-                administrators, election administrators,
+                Member posts and photos are disclosed to approved members. Suggestions and account details are limited to authorized organizers. Information may also be disclosed to
                 contracted service providers acting under instructions, or when
                 reasonably required for security, legal compliance, or the
                 protection of users and the service.
@@ -171,14 +172,9 @@
               <p class="detail-label">Retention</p>
               <h3>Limited by purpose</h3>
               <p>
-                Cloud test accounts, approval records, live-content audit data, and test ballot records are deleted or
+                Cloud test accounts, approval records, test posts, test photos, suggestions, notification subscriptions, and live-content audit data are deleted or
                 de-identified no later than 90 days after testing ends. Service
-                logs are configured for 30 days. Official election records are
-                retained through certification and any approved recount or
-                challenge period, then deleted or de-identified within 90 days
-                unless a longer organizational or legal requirement applies.
-                On-device tokens remain until sign-out, expiry, app removal, or
-                account deletion; receipts remain until app removal.
+                logs are configured for 30 days. Production community posts, photos, and suggestions are deleted or de-identified no later than 90 days after the meeting ends unless they are needed to address a safety, conduct, security, or legal issue. Push subscriptions are removed when alerts are turned off, the member signs out, or an account is deleted, and are purged after the meeting. On-device authentication tokens remain until sign-out, expiry, app removal, or account deletion.
               </p>
             </article>
 
@@ -189,8 +185,7 @@
                 Data is encrypted in transit, cloud tables use server-side
                 encryption and point-in-time recovery, access is gated by email
                 verification, administrator approval, and assigned roles, and
-                duplicate voting is enforced by a server transaction. No system
-                can guarantee absolute security or absolute anonymity.
+                private photos are stored in a non-public bucket and delivered through short-lived signed links, while uploads have type and size limits. No system can guarantee absolute security.
               </p>
             </article>
 
@@ -222,6 +217,11 @@
             <strong>Policy changes</strong>
             <p>If app features, sponsors, analytics, notification delivery, or voting practices change materially, this page will be updated with a new date before the changed behavior is released.</p>
           </aside>
+
+          <aside class="notice future-feature">
+            <strong>Voting is not in the MVP</strong>
+            <p>The district currently uses Election Runner for district elections. The app’s main experience does not include voting. If an in-app voting feature is authorized later, the policy and store disclosures will be updated before members use it; any protected-voting records would keep participation identity separate from ballot selections.</p>
+          </aside>
         </div>
       </section>
 
@@ -238,9 +238,7 @@
           <p>
             You can begin an account-deletion request from the Account page in
             the app or use the public email link below. Identity may need to be verified before a request is completed.
-            Deleting an account does not silently delete a certified anonymous
-            ballot, override an approved records requirement, or create a second
-            chance to vote during an active ballot.
+            Approved deletion requests include the account’s community posts, stored photos, feedback, and notification subscription unless a limited record must be retained for a safety, conduct, security, legal, or authorized future-election requirement.
           </p>
         </div>
         <a class="primary-link" href="mailto:javonn19@gmail.com?subject=82nd%20District%20Meeting%20Privacy%20Request">Start a privacy request <span aria-hidden="true">→</span></a>
@@ -251,7 +249,7 @@
           <div>
             <p class="section-label">Support</p>
             <h2 id="support-title">Need help with the meeting app?</h2>
-            <p>Include your device model, iOS or Android version, app version, and the screen where the issue occurred. Do not include a password, ballot selection, or authentication code.</p>
+            <p>Include your device model, iOS or Android version, app version, and the screen where the issue occurred. Do not include a password, authentication code, private suggestion text, or sensitive photo.</p>
           </div>
           <a class="primary-link light" href="mailto:javonn19@gmail.com?subject=82nd%20District%20Meeting%20App%20Support">Email app support <span aria-hidden="true">→</span></a>
         </div>
