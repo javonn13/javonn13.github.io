@@ -11,7 +11,7 @@
     <meta property="og:description" content="Privacy, private member-community practices, support, and beta status for the 2027 Phoenix meeting app.">
     <meta property="og:url" content="https://javonn13.github.io/district-meeting-2027/">
     <title>82nd 12th District Meeting App — Privacy, Support &amp; Beta Access</title>
-    <link rel="stylesheet" href="styles.css?v=20260908c">
+    <link rel="stylesheet" href="styles.css?v=20260908d">
   </head>
   <body>
     <a class="skip-link" href="#privacy-policy">Skip to privacy policy</a>
@@ -38,6 +38,8 @@
           and receive super-administrator approval before entering the app.
           Approved members receive internet-backed meeting updates, announcements,
           resources, a private social feed, photo sharing, and a suggestion box.
+          The updated preview also adds member polls, festivities and Phoenix guides,
+          Uber/Lyft shortcuts, and a private carpool board.
         </p>
         <div class="host-line">
           Phi Iota <span>•</span> Alpha Theta <span>•</span> Alpha Epsilon
@@ -53,7 +55,7 @@
         <p class="lede">
           These public, time-limited packages let organizers review the app’s
           artwork and features. They use local demonstration data and do
-          not create real member accounts, upload photos, send suggestions, or register devices for production alerts. The future
+          not create real member accounts, upload photos, send suggestions, email poll results, publish carpools, or register devices for production alerts. The future
           member beta will restore verified registration and administrator
           approval after the AWS services are deployed.
         </p>
@@ -99,7 +101,7 @@
             <article>
               <span>03</span>
               <h3>Private member community</h3>
-              <p>Posts and shared photos are visible only to approved members. Suggestions are private to authorized organizers, and notification permission is optional.</p>
+              <p>Posts, shared photos, polls, and carpool coordination are visible only to approved members. Suggestions and aggregate poll results are limited to authorized organizers, and notification permission is optional.</p>
             </article>
           </div>
 
@@ -113,6 +115,10 @@
                 <li>Live meeting content published by authorized administrators, including the administrator username and update time in audit records</li>
                 <li>Member posts, selected photos, photo descriptions, author display name, internal account identifier, post time, and moderation records</li>
                 <li>Private suggestions, selected topic, account name and email, review status, and submission time</li>
+                <li>Carpool request or offer, author name, approximate time, general route or public meeting point, seat count, coordination note, optional details, internal account identifier, and moderation record</li>
+                <li>Poll participation stored with the poll ID and internal member identifier but no selected option</li>
+                <li>Poll responses stored separately with the poll ID, random receipt, selected option, and submission time but no member identifier</li>
+                <li>Aggregate poll counts emailed to the configured super-administrator addresses when a poll closes</li>
                 <li>Optional device notification token, device platform, and alert preference when a member turns on push notifications</li>
                 <li>Selected photos may contain visual details or image metadata supplied by the device; members should not share sensitive personal, financial, health, or membership information</li>
                 <li>Security and operations metadata that hosting providers may process, including IP address, request time, logs, traces, and error details</li>
@@ -128,6 +134,8 @@
                 <li>Deliver announcements and optional push alerts</li>
                 <li>Display approved-member posts and photos, support author or administrator removal, and moderate meeting-inappropriate content</li>
                 <li>Provide downloadable resources and route private suggestions to authorized organizers</li>
+                <li>Run one-response meeting check-ins, restrict aggregate results, and email closing results to super administrators</li>
+                <li>Publish festivities, Phoenix recommendations, transportation information, and approved-member carpool coordination</li>
                 <li>Secure, troubleshoot, and operate the service</li>
               </ul>
             </article>
@@ -150,7 +158,7 @@
               <p>
                 Amazon Web Services provides identity, API, logging,
                 tracing, email-delivery, account-recovery, live-content, database,
-                and private photo-storage services. Expo provides device notification-token registration and push delivery after a member opts in. Google Maps and the Arizona Grand Resort site open only
+                polling, aggregate result-email, carpool, and private photo-storage services. Expo provides device notification-token registration and push delivery after a member opts in. Google Maps, Uber, Lyft, Visit Phoenix, and the Arizona Grand Resort site open only
                 when you select their links and then operate under their own
                 privacy terms. GitHub Pages hosts this policy and support page.
               </p>
@@ -161,7 +169,7 @@
               <h3>No sale of personal information</h3>
               <p>
                 Information is not sold or shared for behavioral advertising.
-                Member posts and photos are disclosed to approved members. Suggestions and account details are limited to authorized organizers. Information may also be disclosed to
+                Member posts, photos, and carpool details are disclosed to approved members. Suggestions, account details, and aggregate poll results are limited to authorized organizers. Information may also be disclosed to
                 contracted service providers acting under instructions, or when
                 reasonably required for security, legal compliance, or the
                 protection of users and the service.
@@ -174,7 +182,7 @@
               <p>
                 Cloud test accounts, approval records, test posts, test photos, suggestions, notification subscriptions, and live-content audit data are deleted or
                 de-identified no later than 90 days after testing ends. Service
-                logs are configured for 30 days. Production community posts, photos, and suggestions are deleted or de-identified no later than 90 days after the meeting ends unless they are needed to address a safety, conduct, security, or legal issue. Push subscriptions are removed when alerts are turned off, the member signs out, or an account is deleted, and are purged after the meeting. On-device authentication tokens remain until sign-out, expiry, app removal, or account deletion.
+                logs are configured for 30 days. Production community posts, photos, and suggestions are deleted or de-identified no later than 90 days after the meeting ends unless they are needed to address a safety, conduct, security, or legal issue. Carpool posts are removed after the relevant ride or no later than 30 days after the meeting, subject to the same limited exceptions. Poll participation and separated responses follow the committee-approved poll retention schedule. Push subscriptions are removed when alerts are turned off, the member signs out, or an account is deleted, and are purged after the meeting. On-device authentication tokens remain until sign-out, expiry, app removal, or account deletion.
               </p>
             </article>
 
@@ -185,7 +193,7 @@
                 Data is encrypted in transit, cloud tables use server-side
                 encryption and point-in-time recovery, access is gated by email
                 verification, administrator approval, and assigned roles, and
-                private photos are stored in a non-public bucket and delivered through short-lived signed links, while uploads have type and size limits. No system can guarantee absolute security.
+                private photos are stored in a non-public bucket and delivered through short-lived signed links, while uploads have type and size limits. Poll participation identity and selected responses are stored separately. No system can guarantee absolute security.
               </p>
             </article>
 
@@ -203,8 +211,8 @@
               <p class="detail-label">Artwork and local assets</p>
               <h3>Meeting artwork is bundled with the app</h3>
               <p>
-                The district-meeting logo, fraternity shield, and temple
-                illustration supplied by the organizer are packaged inside the
+                The district-meeting logo, fraternity shields, temple
+                illustrations, and additional logo concepts supplied by the organizer are packaged inside the
                 app. Merely viewing these images does not contact an external
                 image server, create an advertising identifier, or disclose
                 personal information. The app does not use the images as
@@ -215,12 +223,12 @@
 
           <aside class="notice">
             <strong>Policy changes</strong>
-            <p>If app features, sponsors, analytics, notification delivery, or voting practices change materially, this page will be updated with a new date before the changed behavior is released.</p>
+            <p>If app features, sponsors, analytics, notification delivery, poll practices, election use, or transportation behavior change materially, this page will be updated with a new date before the changed behavior is released.</p>
           </aside>
 
           <aside class="notice future-feature">
-            <strong>Voting is not in the MVP</strong>
-            <p>The district currently uses Election Runner for district elections. The app’s main experience does not include voting. If an in-app voting feature is authorized later, the policy and store disclosures will be updated before members use it; any protected-voting records would keep participation identity separate from ballot selections.</p>
+            <strong>Polls are for meeting check-ins</strong>
+            <p>The MVP includes one-response polls for quick check-ins before, during, and after the meeting. Participation identity is stored separately from selected responses, aggregate results are restricted, and closing results are emailed to the configured super administrators. The district currently uses Election Runner for district elections; the app will not be represented as an election system unless the district separately approves it after additional security, accessibility, load, observer, recount, policy, and incident-response review.</p>
           </aside>
         </div>
       </section>
@@ -238,7 +246,7 @@
           <p>
             You can begin an account-deletion request from the Account page in
             the app or use the public email link below. Identity may need to be verified before a request is completed.
-            Approved deletion requests include the account’s community posts, stored photos, feedback, and notification subscription unless a limited record must be retained for a safety, conduct, security, legal, or authorized future-election requirement.
+            Approved deletion requests include the account’s community posts, stored photos, carpool posts, feedback, and notification subscription unless a limited record must be retained for a safety, conduct, security, or legal requirement. Because poll selections are stored separately, a response cannot be connected back to the member; participation records may remain through poll close to prevent duplicate responses.
           </p>
         </div>
         <a class="primary-link" href="mailto:javonn19@gmail.com?subject=82nd%20District%20Meeting%20Privacy%20Request">Start a privacy request <span aria-hidden="true">→</span></a>
@@ -249,7 +257,7 @@
           <div>
             <p class="section-label">Support</p>
             <h2 id="support-title">Need help with the meeting app?</h2>
-            <p>Include your device model, iOS or Android version, app version, and the screen where the issue occurred. Do not include a password, authentication code, private suggestion text, or sensitive photo.</p>
+            <p>Include your device model, iOS or Android version, app version, and the screen where the issue occurred. Do not include a password, authentication code, private suggestion text, flight confirmation number, room number, home address, payment information, or sensitive photo.</p>
           </div>
           <a class="primary-link light" href="mailto:javonn19@gmail.com?subject=82nd%20District%20Meeting%20App%20Support">Email app support <span aria-hidden="true">→</span></a>
         </div>
